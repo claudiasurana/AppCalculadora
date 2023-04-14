@@ -55,8 +55,15 @@ namespace AppCalculadora
             }
             else if (operador == '/')
             {
-                textResultado.Text = (num1 / num2).ToString();
-                num1 = double.Parse(textResultado.Text); 
+                if(textResultado.Text != "0")
+                {
+                    textResultado.Text = (num1 / num2).ToString();
+                    num1 = double.Parse(textResultado.Text);
+                }
+                else
+                {
+                    MessageBox.Show("No se puede dividir entre cero");
+                }
             }
 
 
